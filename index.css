@@ -61,3 +61,7 @@ body{
 .contact-link-container{
         font-family: Didact Gothic;
 }
+.dp{
+    display: flex;
+    justify-content: center;
+}
