@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+    
+    /* transition: 0.2s; */
+
+}
+body{
+     background: black;
+    color: white;
+}
+#vertical {
+    writing-mode: vertical-rl;
+    margin: 10px 6px 0;
+}
+#hd{
+      transition: all 2s ease-in;
+}
+#hd :hover{
+    width: 10vh;
+    color: green;
+    
+}
+.right-side {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+.card{
+    width: 8rem;
+    height: 6rem;
+    transition: all 1s ease;
+    
+}
+.card :hover{
+    transform: scale(1.05);
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+.bloks{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% Cover 40%;
+}
+
+.btn1 :hover{
+    color: grey;
+}
+.contact-link-container{
+        font-family: Didact Gothic;
+}
