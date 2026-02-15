@@ -1,13 +1,13 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
    
     
     /* transition: 0.2s; */
 
-}
-body{
+/* } */
+/* body{
      background: black;
     color: white;
 }
@@ -64,4 +64,168 @@ body{
 .dp{
     display: flex;
     justify-content: center;
-}
+} */
+
+
+body {
+      background: black;
+      color: white;
+    }
+
+    /* ===== NAVBAR FIX ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1050;
+      background: black;
+    }
+
+    /* HOME SECTION ALIGNMENT */
+    #home {
+      min-height: 60vh;
+      padding-top: 70px;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    /* RIGHT SOCIAL */
+    .right-side {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+
+    /* SKILLS */
+    .skill-card {
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skill-card img {
+      max-width: 65px;
+    }
+
+    /* PROFILE IMAGE */
+    .dp img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* EDUCATION ALIGNMENT */
+    .edu-row {
+      flex-wrap: nowrap;
+    }
+
+    .edu-left,
+    .edu-right {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width:576px) {
+      .edu-left {
+        padding-right: 10px;
+      }
+
+      .edu-right {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width:768px) {
+      .right-side {
+        right: 10px;
+        /* move slightly inward */
+        top: 55%;
+        /* better thumb reach */
+        transform: translateY(-50%) scale(0.9);
+      }
+    }
+
+    /* ============================= */
+    /* SCROLL ANIMATION (RESTORED)   */
+    /* ============================= */
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    section {
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+
+    /* ============================= */
+    /* FULLSTACK TEXT ANIMATION      */
+    /* ============================= */
+
+    #hd {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+
+      /* perfect alignment */
+      vertical-align: baseline;
+      line-height: 1.4;
+      /* slightly increased to prevent clipping */
+      height: 1.15em;
+
+      animation: typing 5s steps(9, end) infinite;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+
+      40% {
+        width: 9ch;
+      }
+
+      60% {
+        width: 9ch;
+      }
+
+      100% {
+        width: 0;
+      }
+    }
+
+    /* ============================= */
+    /* RIGHT SOCIAL SCROLL BEHAVIOR  */
+    /* ============================= */
+
+    .right-side {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
+
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    /* hidden state */
+    .right-side.hide {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-50%) translateX(30px);
+    }
